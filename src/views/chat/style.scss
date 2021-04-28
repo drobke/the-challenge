@@ -1,53 +1,86 @@
 .main-wrapper {
-  width: 100vw;
-  height: calc(100vh - 120px);
+  min-height: 100vh;
   background: url("../../assets/background.png");
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
   overflow: auto;
   .message-wrapper {
+    display: flex;
+    flex-direction: column;
     max-width: calc(640px - 48px);
-    padding: 24px;
+    padding: 24px 24px 0;
     width: 100%;
-    
+    margin-bottom: 100px;
   }
-  
 }
 
 .bottom-wrapper {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #3798d4;
-    height: 130px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #3798d4;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .input-wrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    .input-wrapper {
-      display: flex;
-      max-width: calc(640px - 48px);
-      width: 100%;
-      height: calc(100% - 40px);
-      padding: 20px 0;
-      input {
-        width: calc(100% - 180px);
-        border: 2px solid #2e77a4;
-        border-radius: 8px;
-        color: #2e77a4;
-        padding-left: 12px;
-        &:focus {
-          outline: none;
-        }
+    max-width: calc(640px - 48px);
+    width: 100%;
+    height: calc(100% - 40px);
+    padding: 20px 0;
+    input {
+      width: calc(100% - 140px);
+      border: 2px solid #2e77a4;
+      border-radius: 8px;
+      color: #2e77a4;
+      padding-left: 12px;
+      font-size: 18px;
+      &::placeholder {
+        color: #cfd5d9;
       }
-      button {
-        width: 160px;
-        margin-left: 20px;
-        border: none;
-        border-radius: 8px;
-        background-color: #ff876d;
-        color: #fff;
-        cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+    }
+    button {
+      width: 120px;
+      margin-left: 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff876d;
+      color: #fff;
+      cursor: pointer;
+      font-size: 20px;
+      &:hover {
+        background-color: darken(#ff876d, 10%);
+        transition: all;
       }
     }
   }
+}
+
+@media only screen and (max-width: 768px) {
+  .main-wrapper {
+    .message-wrapper {
+      margin-bottom: 80px;
+    }
+  }
+  .bottom-wrapper {
+    height: 80px;
+    .input-wrapper {
+      width: calc(100% - 16px);
+      height: calc(100% - 16px);
+      padding: 8px;
+      input {
+        width: 80%;
+      }
+      button {
+        margin-left: 8px;
+        width: 20%;
+      }
+    }
+  }
+}
