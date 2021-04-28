@@ -1,0 +1,16 @@
+.message-buble {
+  display: block;
+  margin-bottom: 16px;
+  padding: 16px;
+  background-color: white;
+  border: 2px solid #d4dade;
+  border-radius: 4px;
+  .sender {
+    color: #b3bcc3;
+  }
+  .message {
+  }
+  .timestamp {
+    color: #b3bcc3;
+  }
+}
